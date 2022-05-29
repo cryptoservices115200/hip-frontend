@@ -77,13 +77,6 @@ const web3Modal = new Web3Modal({
 });
 
 
-async function connectwallet() { 
-    var provider = await web3Modal.connect();
-      var web3 = new Web3(provider); 
-      await window.ethereum.send('eth_requestAccounts'); 
-      var accounts = await web3.eth.getAccounts(); 
-    
-}
 
           var provider = new ethers.providers.Web3Provider(ethereum);
             const accounts = await provider.listAccounts();
