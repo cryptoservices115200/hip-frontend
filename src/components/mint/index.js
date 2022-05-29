@@ -1,6 +1,9 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ethers } from "ethers";
+import Web3Modal from "web3modal";
+import WalletConnectProvider from "@walletconnect/web3-provider";
+import WalletLink from "walletlink";
 
 import DiversifyNFT from "../../contracts/DiversifyNFT.json";
 import DiversifyNFTSales from "../../contracts/DiversifyNFTSales.json";
@@ -42,6 +45,54 @@ class MintNFT extends React.Component {
     mintNFT = async() => {
         const { ethereum } = window;
         if (ethereum) {
+
+const providerOptions = {
+  binancechainwallet: {
+    package: true
+    },
+  walletconnect: {
+    package: WalletConnectProvider,
+    options: {
+      infuraId: "0bbb45846bdf44d1bcbe6275327619ad"
+    }
+    },
+    walletlink: {
+    package: WalletLink, 
+    options: {
+      appName: "Hip Ass Ape Minter", 
+      infuraId: "0bbb45846bdf44d1bcbe6275327619ad", 
+      rpc: "", 
+      chainId: 1, 
+      appLogoUrl: null, 
+      darkMode: true 
+    }
+    },
+};
+
+const web3Modal = new Web3Modal({
+  network: "mainnet",
+  theme: "dark",
+  cacheProvider: true,
+  providerOptions 
+});
+
+
+async function connectwallet() { 
+    var provider = await web3Modal.connect();
+      var web3 = new Web3(provider); 
+      await window.ethereum.send('eth_requestAccounts'); 
+      var accounts = await web3.eth.getAccounts(); 
+      account = accounts[0]; 
+      document.getElementById('wallet-address').textContent = account; 
+      contract = new web3.eth.Contract(ABI, ADDRESS);
+}
+
+async function mint() {
+        var _mintAmount = Number(document.querySelector("[name=amount]").value); 
+        var mintRate = Number(await contract.methods.cost().call()); 
+        var totalAmount = mintRate * _mintAmount; 
+      contract.methods.mint(account, _mintAmount).send({ from: account, value: String(totalAmount) }); 
+} 
             var provider = new ethers.providers.Web3Provider(ethereum);
             const accounts = await provider.listAccounts();
             if (accounts.length > 0) {
