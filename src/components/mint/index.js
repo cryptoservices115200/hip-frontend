@@ -48,7 +48,7 @@ class MintNFT extends React.Component {
 
 const providerOptions = {
   binancechainwallet: {
-    package: true
+    package:   Binancechainwallet
     },
   walletconnect: {
     package: WalletConnectProvider,
