@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ethers } from "ethers";
-import WalletConnectProvider from "@web3-react/injected-connector";
 import WalletLink from "@web3-react/walletlink-connector";
 
 import DiversifyNFT from "../../contracts/DiversifyNFT.json";
