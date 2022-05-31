@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ethers } from "ethers";
-import WalletConnectProvider from "@walletconnect/web3-provider";
-import WalletLink from "walletlink";
+import WalletConnectProvider from "@web3-react/injected-connector";
+import WalletLink from "@web3-react/walletlink-connector";
 
 import DiversifyNFT from "../../contracts/DiversifyNFT.json";
 import DiversifyNFTSales from "../../contracts/DiversifyNFTSales.json";
@@ -61,7 +61,8 @@ const providerOptions = {
       appName: "Hip Ass Ape Minter", 
       infuraId: "0bbb45846bdf44d1bcbe6275327619ad", 
       rpc: "", 
-      chainId: 1, 
+      chainId: 4
+, 
       appLogoUrl: null, 
       darkMode: true 
     }
@@ -69,7 +70,7 @@ const providerOptions = {
 };
 
 const web3Modal = new Web3Modal({
-  network: "mainnet",
+  network: "rinkeby",
   theme: "dark",
   cacheProvider: true,
   providerOptions 
