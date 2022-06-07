@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { ethers } from "ethers";
-import web3modal from "web3modal";;
+import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import WalletLink from "walletlink";
 
@@ -47,9 +47,9 @@ class MintNFT extends React.Component {
         if (ethereum) {
 
 const providerOptions = {
-  binancechainwallet: {
-    package: binancechainwallet
-    },
+//   binancechainwallet: {
+//     package: binancechainwallet
+//     },
   walletconnect: {
     package: WalletConnectProvider,
     options: {
