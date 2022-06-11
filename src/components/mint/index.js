@@ -70,12 +70,6 @@ const providerOptions = {
     },
 };
 
-const web3Modal = new Web3Modal({
-  network: "rinkeby",
-  theme: "dark",
-  cacheProvider: true,
-  providerOptions 
-});
 
 
 
