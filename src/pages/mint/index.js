@@ -10,7 +10,6 @@ import Banner from "../../components/banner";
 function Mint() {
   useEffect(() => {
     AOS.init();
-    AOS.refresh()
   }, []);
 
   return (
