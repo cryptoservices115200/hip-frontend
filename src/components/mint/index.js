@@ -117,22 +117,6 @@ export default function Home() {
     }
   }
 
-  return (
-    <div>
-      {hasMetamask ? (
-        isConnected ? (
-          "Connected! "
-        ) : (
-          <button onClick={() => connect()}>Connect</button>
-        )
-      ) : (
-        "Please install metamask"
-      )}
-
-      {isConnected ? <button onClick={() => execute()}>Execute</button> : ""}
-    </div>
-  );
-}
 
 
           var provider = new ethers.providers.Web3Provider(ethereum);
