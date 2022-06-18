@@ -53,8 +53,24 @@ const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
+     
+bridge: "https://bridge.walletconnect.org"
+chainId: 1
+connectCallbacks: []
+connected: true=
+isConnecting: false
+networkId: 4
+qrcode: true
+qrcodeModalOptions: undefined
+rpc: null
+rpcUrl: "https://rinkeby.infura.io/v3/0bbb45846bdf44d1bcbe6275327619ad"
       infuraId: "0bbb45846bdf44d1bcbe6275327619ad"
     }
+      const contractInstance = await getDeployedContract(ABI, address);
+    return contractInstance.methods[methodName](...params)
+      .send(transactionDetails)
+      .on("transactionHash", (txhash) => {
+                .............
     },
     walletlink: {
     package: WalletLink, 
@@ -69,7 +85,6 @@ const providerOptions = {
     }
     },
 };
-
 
 
 
