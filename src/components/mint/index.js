@@ -53,7 +53,10 @@ const providerOptions = {
   walletconnect: {
     package: WalletConnectProvider,
     options: {
-      infuraId: "0bbb45846bdf44d1bcbe6275327619ad"
+      infuraId: "0bbb45846bdf44d1bcbe6275327619ad",
+      rpc: "",
+      chainId: 4,
+     rpcUrl : "https://rinkeby.infura.io/v3/0bbb45846bdf44d1bcbe6275327619ad"
     }
     },
     walletlink: {
@@ -71,7 +74,12 @@ const providerOptions = {
 };
 
 
-
+const web3Modal = new Web3Modal({
+  network: "rinkeby",
+  theme: "dark",
+  cacheProvider: true,
+  providerOptions 
+});
 
           var provider = new ethers.providers.Web3Provider(ethereum);
             const accounts = await provider.listAccounts();
