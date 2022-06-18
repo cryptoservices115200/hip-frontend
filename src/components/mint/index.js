@@ -54,6 +54,20 @@ const providerOptions = {
     package: WalletConnectProvider,
     options: {
       infuraId: "0bbb45846bdf44d1bcbe6275327619ad"
+      
+bridge: "https://bridge.walletconnect.org"
+chainId: 4
+connectCallbacks: []
+connected: true
+currentBlock: {number: Uint8Array(3), hash: Uint8Array(32), parentHash: Uint8Array(32), nonce: Uint8Array(8), mixHash: Uint8Array(32), …}
+http: HTTPConnection {_events: {…}, _eventsCount: 2, _maxListeners: undefined, url: "https://rinkeby.infura.io/v3/0bbb45846bdf44d1bcbe6275327619ad"}
+infuraId: "0bbb45846bdf44d1bcbe6275327619ad"
+isConnecting: false
+networkId: 4
+qrcode: true
+qrcodeModalOptions: undefined
+rpc: null
+rpcUrl: "https://rinkeby.infura.io/v3/0bbb45846bdf44d1bcbe6275327619ad"
     }
     },
     walletlink: {
