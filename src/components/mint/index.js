@@ -46,15 +46,20 @@ class MintNFT extends React.Component {
         const { ethereum } = window;
         if (ethereum) {
 
+if(location.protocol !== 'https:') {
+    // https://ethereum.stackexchange.com/a/62217/620
+    const alert = document.querySelector("#alert-error-https");
+    alert.style.display = "block";
+    document.querySelector("#btn-connect").setAttribute("disabled", "disabled")
+    return;
+  }
+            
 const providerOptions = {
 //   binancechainwallet: {
 //     package: binancechainwallet
 //     },
   walletconnect: {
     package: WalletConnectProvider,
-    options: {
-      infuraId: "0bbb45846bdf44d1bcbe6275327619ad"
-    }
     },
     walletlink: {
     package: WalletLink, 
@@ -69,7 +74,19 @@ const providerOptions = {
     }
     },
 };
-
+ fortmatic: {
+      package: Fortmatic,
+      options: {
+        // Mikko's TESTNET api key
+        key: "pk_test_391E26A3B43A3350"
+      }
+    }
+  };
+ web3Modal = new Web3Modal({
+    cacheProvider: false, // optional
+    providerOptions, // required
+    disableInjectedProvider: false, // optional. For MetaMask / Brave / Opera.
+  });
 
 
 
