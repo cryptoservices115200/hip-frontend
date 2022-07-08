@@ -30,4 +30,5 @@ function Mint() {
   );
 }
 
+
 export default Mint;
